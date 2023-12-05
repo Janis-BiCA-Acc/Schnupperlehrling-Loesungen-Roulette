@@ -46,7 +46,7 @@
             this.pBox6 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.rbtn1to6 = new System.Windows.Forms.RadioButton();
+            this.rbtn1to5 = new System.Windows.Forms.RadioButton();
             this.rbtn1to10 = new System.Windows.Forms.RadioButton();
             this.rbtnEvenNumber = new System.Windows.Forms.RadioButton();
             this.rbtnUnevenNumber = new System.Windows.Forms.RadioButton();
@@ -215,17 +215,18 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // rbtn1to6
+            // rbtn1to5
             // 
-            this.rbtn1to6.AutoSize = true;
-            this.rbtn1to6.Location = new System.Drawing.Point(12, 436);
-            this.rbtn1to6.Name = "rbtn1to6";
-            this.rbtn1to6.Size = new System.Drawing.Size(46, 17);
-            this.rbtn1to6.TabIndex = 14;
-            this.rbtn1to6.TabStop = true;
-            this.rbtn1to6.Text = "1 - 6";
-            this.rbtn1to6.UseVisualStyleBackColor = true;
-            this.rbtn1to6.CheckedChanged += new System.EventHandler(this.rbtn1to6_CheckedChanged);
+            this.rbtn1to5.AutoSize = true;
+            this.rbtn1to5.Checked = true;
+            this.rbtn1to5.Location = new System.Drawing.Point(12, 436);
+            this.rbtn1to5.Name = "rbtn1to5";
+            this.rbtn1to5.Size = new System.Drawing.Size(46, 17);
+            this.rbtn1to5.TabIndex = 14;
+            this.rbtn1to5.TabStop = true;
+            this.rbtn1to5.Text = "1 - 5";
+            this.rbtn1to5.UseVisualStyleBackColor = true;
+            this.rbtn1to5.CheckedChanged += new System.EventHandler(this.rbtn1to5_CheckedChanged);
             // 
             // rbtn1to10
             // 
@@ -234,7 +235,6 @@
             this.rbtn1to10.Name = "rbtn1to10";
             this.rbtn1to10.Size = new System.Drawing.Size(52, 17);
             this.rbtn1to10.TabIndex = 15;
-            this.rbtn1to10.TabStop = true;
             this.rbtn1to10.Text = "1 - 10";
             this.rbtn1to10.UseVisualStyleBackColor = true;
             this.rbtn1to10.CheckedChanged += new System.EventHandler(this.rbtn1to10_CheckedChanged);
@@ -246,7 +246,6 @@
             this.rbtnEvenNumber.Name = "rbtnEvenNumber";
             this.rbtnEvenNumber.Size = new System.Drawing.Size(89, 17);
             this.rbtnEvenNumber.TabIndex = 16;
-            this.rbtnEvenNumber.TabStop = true;
             this.rbtnEvenNumber.Text = "even Number";
             this.rbtnEvenNumber.UseVisualStyleBackColor = true;
             this.rbtnEvenNumber.CheckedChanged += new System.EventHandler(this.rbtnEvenNumber_CheckedChanged);
@@ -258,7 +257,6 @@
             this.rbtnUnevenNumber.Name = "rbtnUnevenNumber";
             this.rbtnUnevenNumber.Size = new System.Drawing.Size(101, 17);
             this.rbtnUnevenNumber.TabIndex = 17;
-            this.rbtnUnevenNumber.TabStop = true;
             this.rbtnUnevenNumber.Text = "uneven Number";
             this.rbtnUnevenNumber.UseVisualStyleBackColor = true;
             this.rbtnUnevenNumber.CheckedChanged += new System.EventHandler(this.rbtnUnevenNumber_CheckedChanged);
@@ -270,13 +268,13 @@
             this.rbtnRandomNumber.Name = "rbtnRandomNumber";
             this.rbtnRandomNumber.Size = new System.Drawing.Size(100, 17);
             this.rbtnRandomNumber.TabIndex = 18;
-            this.rbtnRandomNumber.TabStop = true;
             this.rbtnRandomNumber.Text = "random Number";
             this.rbtnRandomNumber.UseVisualStyleBackColor = true;
             this.rbtnRandomNumber.CheckedChanged += new System.EventHandler(this.rbtnRandomNumber_CheckedChanged);
             // 
             // trackBar1
             // 
+            this.trackBar1.Enabled = false;
             this.trackBar1.Location = new System.Drawing.Point(12, 385);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(225, 45);
@@ -285,6 +283,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(1027, 152);
             this.comboBox1.Name = "comboBox1";
@@ -311,7 +310,7 @@
             this.Controls.Add(this.rbtnUnevenNumber);
             this.Controls.Add(this.rbtnEvenNumber);
             this.Controls.Add(this.rbtn1to10);
-            this.Controls.Add(this.rbtn1to6);
+            this.Controls.Add(this.rbtn1to5);
             this.Controls.Add(this.pBox10);
             this.Controls.Add(this.pBox9);
             this.Controls.Add(this.pBox8);
@@ -362,7 +361,7 @@
         private System.Windows.Forms.PictureBox pBox6;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.RadioButton rbtn1to6;
+        private System.Windows.Forms.RadioButton rbtn1to5;
         private System.Windows.Forms.RadioButton rbtn1to10;
         private System.Windows.Forms.RadioButton rbtnEvenNumber;
         private System.Windows.Forms.RadioButton rbtnUnevenNumber;
