@@ -8,3 +8,13 @@ C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutio
 C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.CoreCompileInputs.cache
 C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.exe
 C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.pdb
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\bin\Debug\solutionRoulette.exe.config
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\bin\Debug\solutionRoulette.exe
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\bin\Debug\solutionRoulette.pdb
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.AssemblyReference.cache
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.Form1.resources
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.Properties.Resources.resources
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.GenerateResource.cache
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.CoreCompileInputs.cache
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.exe
+S:\src\Schnupperlehrling-Loesungen-Roulette\solutionRoulette\obj\Debug\solutionRoulette.pdb
