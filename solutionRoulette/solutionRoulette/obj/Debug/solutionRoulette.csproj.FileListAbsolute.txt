@@ -1,0 +1,10 @@
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\bin\Debug\solutionRoulette.exe.config
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\bin\Debug\solutionRoulette.exe
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\bin\Debug\solutionRoulette.pdb
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.AssemblyReference.cache
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.Form1.resources
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.Properties.Resources.resources
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.GenerateResource.cache
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.csproj.CoreCompileInputs.cache
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.exe
+C:\Users\ch-kue\source\repos\solutionRoulette\solutionRoulette\obj\Debug\solutionRoulette.pdb
