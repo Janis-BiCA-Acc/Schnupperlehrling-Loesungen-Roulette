@@ -1,8 +1,6 @@
 ﻿using solutionRoulette.Properties;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 
 namespace solutionRoulette
@@ -165,12 +163,12 @@ namespace solutionRoulette
         {
             if (rbtn1to10.Checked)
             {
-                if (currentNumber < 11)
+                if (currentNumber < 10)
                 {
                     currentNumber++;
                     Start();
                 }
-                else if (currentNumber > 10)
+                else if (currentNumber > 9)
                 {
                     currentNumber = 1;
                     Start();
@@ -191,12 +189,12 @@ namespace solutionRoulette
             }
             if (rbtnEvenNumber.Checked)
             {
-                if (currentNumber < 11)
+                if (currentNumber < 10)
                 {
                     currentNumber += 2;
                     Start();
                 }
-                else if (currentNumber > 10)
+                else if (currentNumber > 9)
                 {
                     currentNumber = 2;
                     Start();
@@ -204,12 +202,12 @@ namespace solutionRoulette
             }
             if (rbtnUnevenNumber.Checked)
             {
-                if (currentNumber < 11)
+                if (currentNumber < 9)
                 {
                     currentNumber += 2;
                     Start();
                 }
-                else if (currentNumber > 10)
+                else if (currentNumber > 8)
                 {
                     currentNumber = 1;
                     Start();

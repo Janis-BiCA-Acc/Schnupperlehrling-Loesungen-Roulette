@@ -110,7 +110,7 @@
             // pBox1
             // 
             this.pBox1.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox1.Location = new System.Drawing.Point(308, 69);
+            this.pBox1.Location = new System.Drawing.Point(308, 178);
             this.pBox1.Name = "pBox1";
             this.pBox1.Size = new System.Drawing.Size(105, 105);
             this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +120,7 @@
             // pBox2
             // 
             this.pBox2.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox2.Location = new System.Drawing.Point(447, 69);
+            this.pBox2.Location = new System.Drawing.Point(447, 59);
             this.pBox2.Name = "pBox2";
             this.pBox2.Size = new System.Drawing.Size(105, 105);
             this.pBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +130,7 @@
             // pBox3
             // 
             this.pBox3.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox3.Location = new System.Drawing.Point(592, 69);
+            this.pBox3.Location = new System.Drawing.Point(592, 59);
             this.pBox3.Name = "pBox3";
             this.pBox3.Size = new System.Drawing.Size(105, 105);
             this.pBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             // pBox4
             // 
             this.pBox4.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox4.Location = new System.Drawing.Point(727, 69);
+            this.pBox4.Location = new System.Drawing.Point(727, 59);
             this.pBox4.Name = "pBox4";
             this.pBox4.Size = new System.Drawing.Size(105, 105);
             this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,7 +150,7 @@
             // pBox5
             // 
             this.pBox5.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox5.Location = new System.Drawing.Point(858, 69);
+            this.pBox5.Location = new System.Drawing.Point(858, 178);
             this.pBox5.Name = "pBox5";
             this.pBox5.Size = new System.Drawing.Size(105, 105);
             this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,7 +160,7 @@
             // pBox10
             // 
             this.pBox10.Image = ((System.Drawing.Image)(resources.GetObject("pBox10.Image")));
-            this.pBox10.Location = new System.Drawing.Point(858, 192);
+            this.pBox10.Location = new System.Drawing.Point(308, 312);
             this.pBox10.Name = "pBox10";
             this.pBox10.Size = new System.Drawing.Size(105, 105);
             this.pBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +170,7 @@
             // pBox9
             // 
             this.pBox9.Image = ((System.Drawing.Image)(resources.GetObject("pBox9.Image")));
-            this.pBox9.Location = new System.Drawing.Point(727, 192);
+            this.pBox9.Location = new System.Drawing.Point(447, 442);
             this.pBox9.Name = "pBox9";
             this.pBox9.Size = new System.Drawing.Size(105, 105);
             this.pBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +180,7 @@
             // pBox8
             // 
             this.pBox8.Image = ((System.Drawing.Image)(resources.GetObject("pBox8.Image")));
-            this.pBox8.Location = new System.Drawing.Point(591, 192);
+            this.pBox8.Location = new System.Drawing.Point(592, 442);
             this.pBox8.Name = "pBox8";
             this.pBox8.Size = new System.Drawing.Size(105, 105);
             this.pBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +190,7 @@
             // pBox7
             // 
             this.pBox7.Image = ((System.Drawing.Image)(resources.GetObject("pBox7.Image")));
-            this.pBox7.Location = new System.Drawing.Point(447, 192);
+            this.pBox7.Location = new System.Drawing.Point(737, 442);
             this.pBox7.Name = "pBox7";
             this.pBox7.Size = new System.Drawing.Size(105, 105);
             this.pBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -200,7 +200,7 @@
             // pBox6
             // 
             this.pBox6.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox6.Location = new System.Drawing.Point(308, 192);
+            this.pBox6.Location = new System.Drawing.Point(858, 312);
             this.pBox6.Name = "pBox6";
             this.pBox6.Size = new System.Drawing.Size(105, 105);
             this.pBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
