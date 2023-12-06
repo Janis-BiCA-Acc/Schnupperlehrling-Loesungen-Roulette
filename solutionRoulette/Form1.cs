@@ -20,6 +20,7 @@ namespace solutionRoulette
             trackBar1.Value = 5;
 
             setAccountBalance(1000);
+
             comboBoxItems(GenerateNumberRange(1, 5));
         }
 
@@ -48,6 +49,7 @@ namespace solutionRoulette
             btnReset.Enabled = false;
             trackBar1.Enabled = true;
             nmrSpinInput.Enabled = false;
+            comboBox1.Enabled = false;
             rbtnState(false);
 
             setAccountBalance(0 - nmrSpinInput.Value);
@@ -139,7 +141,7 @@ namespace solutionRoulette
                     }
                     MessageBox.Show(resultMessage);
                     listBox1.Items.Add(resultMessage);
-                    listBox1.Items.Add("New Accountbalance: " + accountBalance.ToString() + "Fr.-");
+                    listBox1.Items.Add("New Accountbalance: " + GetAccountBalance().ToString() + "Fr.-");
                     listBox1.Items.Add(DateTime.Now);
                 }  
                 else
@@ -269,10 +271,32 @@ namespace solutionRoulette
 
         private void setAccountBalance(decimal gainedValue)
         {
-            accountBalance = gainedValue + accountBalance;
+            if(comboBox1.SelectedItem != null)
+            {
+                accountBalance = gainedValue + accountBalance;
 
-            txtBoxBalance.Text = accountBalance.ToString() + " Fr.-";
+                txtBoxBalance.Text = accountBalance.ToString() + " Fr.-";
+            }
 
+            if (txtBoxBalance.Text == string.Empty)
+            {
+                accountBalance = 1000;
+                txtBoxBalance.Text = accountBalance.ToString() + " Fr.-";
+            }
+        }
+
+        private decimal GetAccountBalance()
+        {
+            return accountBalance;
+        }
+
+        private void spinCost_ValueChanged(object sender, EventArgs e)
+        {
+            if(decimal.Parse(txtBoxBalance.Text.Split(' ')[0]) < nmrSpinInput.Value) 
+            {
+                MessageBox.Show("Zu wenig Geld");
+                nmrSpinInput.Value = decimal.Parse(txtBoxBalance.Text.Split(' ')[0]);
+            }
         }
     }
 }

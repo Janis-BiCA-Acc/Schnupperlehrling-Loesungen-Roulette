@@ -309,6 +309,7 @@
             0,
             0,
             0});
+            this.nmrSpinInput.ValueChanged += new System.EventHandler(this.spinCost_ValueChanged);
             // 
             // pBox1
             // 
