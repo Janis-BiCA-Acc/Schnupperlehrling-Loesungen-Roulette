@@ -1,10 +1,9 @@
 ﻿using solutionRoulette.Properties;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Threading;
-using System.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace solutionRoulette
 {
@@ -21,12 +20,7 @@ namespace solutionRoulette
             trackBar1.Value = 5;
 
             comboBox1.Items.Clear();
-            comboBox1.Items.Add("1");
-            comboBox1.Items.Add("2");
-            comboBox1.Items.Add("3");
-            comboBox1.Items.Add("4");
-            comboBox1.Items.Add("5");
-
+            comboBoxItems(GenerateNumberRange(1, 5));
         }
 
         private void Start()
@@ -73,6 +67,8 @@ namespace solutionRoulette
             btnStart.Enabled = false;
             btnAbort.Enabled = false;
             btnReset.Enabled = true;
+            trackBar1.Enabled = false;
+            comboBox1.Enabled = false;
 
             timer2.Enabled = true;
             timer2.Interval = timer1.Interval;
@@ -87,7 +83,6 @@ namespace solutionRoulette
             btnAbort.Enabled = false;
             btnStart.Enabled = true;
             btnReset.Enabled = false;
-            trackBar1.Enabled = false;
             pBox1.Image = Resources.kreis_grün;
             pBox2.Image = Resources.kreis_grün;
             pBox3.Image = Resources.kreis_grün;
@@ -131,33 +126,29 @@ namespace solutionRoulette
             }
         }
 
-        private void rbtn1to5_CheckedChanged(object sender, EventArgs e)
+        private void rbtn_CheckedChanged(object sender, EventArgs e)
         {
-            int[] comboboxNumbers = { 1, 2, 3, 4, 5};
-            comboBoxItems(comboboxNumbers);
-        }
+            RadioButton radioButton = (RadioButton)sender;
+            int[] comboboxNumbers = null;
 
-        private void rbtn1to10_CheckedChanged(object sender, EventArgs e)
-        {
-            int[] comboboxNumbers = { 1, 2, 3, 4, 5, 6, 7, 8 , 9 , 10};
-            comboBoxItems(comboboxNumbers);
-        }
-
-        private void rbtnEvenNumber_CheckedChanged(object sender, EventArgs e)
-        {
-            int[] comboboxNumbers = {2, 4, 6, 8, 10};
-            comboBoxItems(comboboxNumbers);
-        }
-
-        private void rbtnUnevenNumber_CheckedChanged(object sender, EventArgs e)
-        {
-            int[] comboboxNumbers = { 1, 3, 5, 7, 9 };
-            comboBoxItems(comboboxNumbers);
-        }
-
-        private void rbtnRandomNumber_CheckedChanged(object sender, EventArgs e)
-        {
-            int[] comboboxNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            switch (radioButton.Name)
+            {
+                case "rbtn1to5":
+                    comboboxNumbers = GenerateNumberRange(1, 5);
+                    break;
+                case "rbtn1to10":
+                    comboboxNumbers = GenerateNumberRange(1, 10);
+                    break;
+                case "rbtnEvenNumber":
+                    comboboxNumbers = GenerateNumberRange(2, 10, 2);
+                    break;
+                case "rbtnUnevenNumber":
+                    comboboxNumbers = GenerateNumberRange(1, 10, 2);
+                    break;
+                case "rbtnRandomNumber":
+                    comboboxNumbers = GenerateNumberRange(1, 10);
+                    break;
+            }
             comboBoxItems(comboboxNumbers);
         }
 
@@ -239,6 +230,18 @@ namespace solutionRoulette
             {
                 comboBox1.Items.Add(comboboxNumbers[i]);
             }
+        }
+
+        private int[] GenerateNumberRange(int start, int end, int step = 1)
+        {
+            List<int> number = new List<int>();
+
+            for (int i = start; i <= end; i += step)
+            {
+                number.Add(i);
+            }
+
+            return number.ToArray();
         }
     }
 }

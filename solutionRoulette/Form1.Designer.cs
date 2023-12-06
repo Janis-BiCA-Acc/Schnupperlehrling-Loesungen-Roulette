@@ -226,7 +226,7 @@
             this.rbtn1to5.TabStop = true;
             this.rbtn1to5.Text = "1 - 5";
             this.rbtn1to5.UseVisualStyleBackColor = true;
-            this.rbtn1to5.CheckedChanged += new System.EventHandler(this.rbtn1to5_CheckedChanged);
+            this.rbtn1to5.CheckedChanged += new System.EventHandler(this.rbtn_CheckedChanged);
             // 
             // rbtn1to10
             // 
@@ -237,7 +237,7 @@
             this.rbtn1to10.TabIndex = 15;
             this.rbtn1to10.Text = "1 - 10";
             this.rbtn1to10.UseVisualStyleBackColor = true;
-            this.rbtn1to10.CheckedChanged += new System.EventHandler(this.rbtn1to10_CheckedChanged);
+            this.rbtn1to10.CheckedChanged += new System.EventHandler(this.rbtn_CheckedChanged);
             // 
             // rbtnEvenNumber
             // 
@@ -248,7 +248,7 @@
             this.rbtnEvenNumber.TabIndex = 16;
             this.rbtnEvenNumber.Text = "even Number";
             this.rbtnEvenNumber.UseVisualStyleBackColor = true;
-            this.rbtnEvenNumber.CheckedChanged += new System.EventHandler(this.rbtnEvenNumber_CheckedChanged);
+            this.rbtnEvenNumber.CheckedChanged += new System.EventHandler(this.rbtn_CheckedChanged);
             // 
             // rbtnUnevenNumber
             // 
@@ -259,7 +259,7 @@
             this.rbtnUnevenNumber.TabIndex = 17;
             this.rbtnUnevenNumber.Text = "uneven Number";
             this.rbtnUnevenNumber.UseVisualStyleBackColor = true;
-            this.rbtnUnevenNumber.CheckedChanged += new System.EventHandler(this.rbtnUnevenNumber_CheckedChanged);
+            this.rbtnUnevenNumber.CheckedChanged += new System.EventHandler(this.rbtn_CheckedChanged);
             // 
             // rbtnRandomNumber
             // 
@@ -270,7 +270,7 @@
             this.rbtnRandomNumber.TabIndex = 18;
             this.rbtnRandomNumber.Text = "random Number";
             this.rbtnRandomNumber.UseVisualStyleBackColor = true;
-            this.rbtnRandomNumber.CheckedChanged += new System.EventHandler(this.rbtnRandomNumber_CheckedChanged);
+            this.rbtnRandomNumber.CheckedChanged += new System.EventHandler(this.rbtn_CheckedChanged);
             // 
             // trackBar1
             // 
