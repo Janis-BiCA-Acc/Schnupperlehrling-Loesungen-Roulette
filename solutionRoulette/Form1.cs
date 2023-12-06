@@ -1,6 +1,7 @@
 ﻿using solutionRoulette.Properties;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 
 namespace solutionRoulette
@@ -9,6 +10,7 @@ namespace solutionRoulette
     {
         int currentNumber = 1;
         decimal accountBalance = 0;
+        string rbtnChecked = "";
 
         public Form1()
         {
@@ -19,9 +21,11 @@ namespace solutionRoulette
             txtBoxBalance.Enabled = false;
             trackBar1.Value = 5;
 
+            rbtnChecked = rbtn1to5.Name;
+
             setAccountBalance(1000);
 
-            comboBoxItems(GenerateNumberRange(1, 5));
+            comboBoxItems(generateNumberRange(1, 5));
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -75,6 +79,8 @@ namespace solutionRoulette
             timer2.Enabled = true;
             timer2.Interval = timer1.Interval;
             timer1.Enabled = false;
+
+
         }
         
         private void btnReset_Click(object sender, EventArgs e)
@@ -129,8 +135,7 @@ namespace solutionRoulette
                     {
                         resultMessage = "You Won";
 
-                        decimal winningValue = nmrSpinInput.Value * 2;
-                        setAccountBalance(winningValue);
+                        setAccountBalance(calculateWinningValue());
                     }
                     else
                     {
@@ -138,9 +143,9 @@ namespace solutionRoulette
                     }
                     MessageBox.Show(resultMessage);
                     listBox1.Items.Add(resultMessage);
-                    listBox1.Items.Add("New Accountbalance: " + GetAccountBalance().ToString() + "Fr.-");
+                    listBox1.Items.Add("Amount won: " + calculateWinningValue() + "Fr.-");
+                    listBox1.Items.Add("New Accountbalance: " + getAccountBalance().ToString() + "Fr.-");
                     listBox1.Items.Add("*----------------------------------------------------------------------*");
-
                     listBox1.Items.Add("");
                 }
                 else
@@ -161,21 +166,23 @@ namespace solutionRoulette
             switch (radioButton.Name)
             {
                 case "rbtn1to5":
-                    comboboxNumbers = GenerateNumberRange(1, 5);
+                    comboboxNumbers = generateNumberRange(1, 5);
                     break;
                 case "rbtn1to10":
-                    comboboxNumbers = GenerateNumberRange(1, 10);
+                    comboboxNumbers = generateNumberRange(1, 10);
                     break;
                 case "rbtnEvenNumber":
-                    comboboxNumbers = GenerateNumberRange(2, 10, 2);
+                    comboboxNumbers = generateNumberRange(2, 10, 2);
                     break;
                 case "rbtnUnevenNumber":
-                    comboboxNumbers = GenerateNumberRange(1, 10, 2);
+                    comboboxNumbers = generateNumberRange(1, 10, 2);
                     break;
                 case "rbtnRandomNumber":
-                    comboboxNumbers = GenerateNumberRange(1, 10);
+                    comboboxNumbers = generateNumberRange(1, 10);
                     break;
             }
+            rbtnChecked = radioButton.Name;
+
             comboBoxItems(comboboxNumbers);
         }
 
@@ -197,7 +204,7 @@ namespace solutionRoulette
             }
         }
 
-        private int[] GenerateNumberRange(int start, int end, int step = 1)
+        private int[] generateNumberRange(int start, int end, int step = 1)
         {
             List<int> number = new List<int>();
 
@@ -225,7 +232,7 @@ namespace solutionRoulette
             }
         }
 
-        private decimal GetAccountBalance()
+        private decimal getAccountBalance()
         {
             return accountBalance;
         }
@@ -313,6 +320,18 @@ namespace solutionRoulette
                 {
                     ((PictureBox)Controls[$"pBox{i}"]).Image = Resources.kreis_grün;
                 }
+            }
+        }
+
+        private decimal calculateWinningValue()
+        {
+            if(rbtnChecked == "rbtn1to5" | rbtnChecked == "rbtnEvenNumber" | rbtnChecked == "rbtnUnevenNumber")
+            {
+                return nmrSpinInput.Value * 4;
+            }
+            else
+            {
+                return nmrSpinInput.Value * 9;
             }
         }
     }

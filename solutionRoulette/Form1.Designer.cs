@@ -301,6 +301,11 @@
             0,
             0,
             0});
+            this.nmrSpinInput.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmrSpinInput.Name = "nmrSpinInput";
             this.nmrSpinInput.Size = new System.Drawing.Size(120, 20);
             this.nmrSpinInput.TabIndex = 23;
