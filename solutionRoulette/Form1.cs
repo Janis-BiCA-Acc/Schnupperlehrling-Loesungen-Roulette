@@ -8,6 +8,7 @@ namespace solutionRoulette
     public partial class Form1 : Form
     {
         int currentNumber = 1;
+        decimal accountBalance = 0;
 
         public Form1()
         {
@@ -15,9 +16,10 @@ namespace solutionRoulette
             btnStop.Enabled = false;
             btnAbort.Enabled = false;
             btnReset.Enabled = false;
+            txtBoxBalance.Enabled = false;
             trackBar1.Value = 5;
 
-            comboBox1.Items.Clear();
+            setAccountBalance(1000);
             comboBoxItems(GenerateNumberRange(1, 5));
         }
 
@@ -40,29 +42,32 @@ namespace solutionRoulette
         {
             timer1.Interval = 50;
             timer1.Enabled = true;
-            btnAbort.Enabled = true;
             btnStart.Enabled = false;
             btnStop.Enabled = true;
+            btnAbort.Enabled = true;
             btnReset.Enabled = false;
             trackBar1.Enabled = true;
+            nmrSpinInput.Enabled = false;
             rbtnState(false);
+
+            setAccountBalance(0 - nmrSpinInput.Value);
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            btnReset.Enabled = true;
             btnStop.Enabled = false;
             btnAbort.Enabled = false;
+            btnReset.Enabled = true;
             trackBar1.Enabled = false;
             comboBox1.Enabled = false;
-            listBox1.Enabled = false;
+
+            setAccountBalance(nmrSpinInput.Value);
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             btnStop.Enabled = false;
-            btnStart.Enabled = false;
             btnAbort.Enabled = false;
             btnReset.Enabled = true;
             trackBar1.Enabled = false;
@@ -78,9 +83,10 @@ namespace solutionRoulette
             trackBar1.Value = 5;
             timer1.Enabled = false;
             timer2.Enabled = false;
-            btnAbort.Enabled = false;
             btnStart.Enabled = true;
             btnReset.Enabled = false;
+            nmrSpinInput.Enabled = true;
+            comboBox1.Enabled = true;
             pBox1.Image = Resources.kreis_grün;
             pBox2.Image = Resources.kreis_grün;
             pBox3.Image = Resources.kreis_grün;
@@ -116,11 +122,30 @@ namespace solutionRoulette
                 timer1.Enabled = false;
                 timer2.Enabled = false;
 
-                string resultMessage = (currentNumber == Convert.ToInt32(comboBox1.SelectedItem)) ? "You Won" : "You Lose";
+                string resultMessage;
+                    
+                if(comboBox1.SelectedItem != null)
+                {
+                    if (currentNumber == Convert.ToInt32(comboBox1.SelectedItem))
+                    {
+                        resultMessage = "You Won";
 
-                MessageBox.Show(resultMessage);
-                listBox1.Items.Add(resultMessage);
-                listBox1.Items.Add(DateTime.Now);
+                        decimal winningValue = nmrSpinInput.Value * 2;
+                        setAccountBalance(winningValue);
+                    }
+                    else
+                    {
+                        resultMessage = "You Lose";
+                    }
+                    MessageBox.Show(resultMessage);
+                    listBox1.Items.Add(resultMessage);
+                    listBox1.Items.Add("New Accountbalance: " + accountBalance.ToString() + "Fr.-");
+                    listBox1.Items.Add(DateTime.Now);
+                }  
+                else
+                {
+                    MessageBox.Show("No Winner");
+                }
             }
         }
 
@@ -240,6 +265,14 @@ namespace solutionRoulette
             }
 
             return number.ToArray();
+        }
+
+        private void setAccountBalance(decimal gainedValue)
+        {
+            accountBalance = gainedValue + accountBalance;
+
+            txtBoxBalance.Text = accountBalance.ToString() + " Fr.-";
+
         }
     }
 }

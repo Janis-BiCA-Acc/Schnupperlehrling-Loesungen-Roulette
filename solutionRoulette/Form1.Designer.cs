@@ -34,7 +34,6 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.pBox1 = new System.Windows.Forms.PictureBox();
             this.pBox2 = new System.Windows.Forms.PictureBox();
             this.pBox3 = new System.Windows.Forms.PictureBox();
             this.pBox4 = new System.Windows.Forms.PictureBox();
@@ -54,7 +53,11 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
+            this.nmrSpinInput = new System.Windows.Forms.NumericUpDown();
+            this.pBox1 = new System.Windows.Forms.PictureBox();
+            this.lblDescription2 = new System.Windows.Forms.Label();
+            this.lblDescription1 = new System.Windows.Forms.Label();
+            this.txtBoxBalance = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox4)).BeginInit();
@@ -65,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSpinInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
@@ -106,16 +111,6 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // pBox1
-            // 
-            this.pBox1.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox1.Location = new System.Drawing.Point(308, 178);
-            this.pBox1.Name = "pBox1";
-            this.pBox1.Size = new System.Drawing.Size(105, 105);
-            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox1.TabIndex = 4;
-            this.pBox1.TabStop = false;
             // 
             // pBox2
             // 
@@ -298,11 +293,67 @@
             this.listBox1.Size = new System.Drawing.Size(225, 355);
             this.listBox1.TabIndex = 21;
             // 
+            // nmrSpinInput
+            // 
+            this.nmrSpinInput.Location = new System.Drawing.Point(12, 646);
+            this.nmrSpinInput.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nmrSpinInput.Name = "nmrSpinInput";
+            this.nmrSpinInput.Size = new System.Drawing.Size(120, 20);
+            this.nmrSpinInput.TabIndex = 23;
+            this.nmrSpinInput.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // pBox1
+            // 
+            this.pBox1.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
+            this.pBox1.Location = new System.Drawing.Point(308, 178);
+            this.pBox1.Name = "pBox1";
+            this.pBox1.Size = new System.Drawing.Size(105, 105);
+            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox1.TabIndex = 4;
+            this.pBox1.TabStop = false;
+            // 
+            // lblDescription2
+            // 
+            this.lblDescription2.AutoSize = true;
+            this.lblDescription2.Location = new System.Drawing.Point(9, 630);
+            this.lblDescription2.Name = "lblDescription2";
+            this.lblDescription2.Size = new System.Drawing.Size(40, 13);
+            this.lblDescription2.TabIndex = 24;
+            this.lblDescription2.Text = "1 Spin:";
+            // 
+            // lblDescription1
+            // 
+            this.lblDescription1.AutoSize = true;
+            this.lblDescription1.Location = new System.Drawing.Point(9, 576);
+            this.lblDescription1.Name = "lblDescription1";
+            this.lblDescription1.Size = new System.Drawing.Size(92, 13);
+            this.lblDescription1.TabIndex = 25;
+            this.lblDescription1.Text = "Account Balance:";
+            // 
+            // txtBoxBalance
+            // 
+            this.txtBoxBalance.Location = new System.Drawing.Point(12, 592);
+            this.txtBoxBalance.Name = "txtBoxBalance";
+            this.txtBoxBalance.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxBalance.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 646);
+            this.ClientSize = new System.Drawing.Size(1288, 690);
+            this.Controls.Add(this.txtBoxBalance);
+            this.Controls.Add(this.lblDescription1);
+            this.Controls.Add(this.lblDescription2);
+            this.Controls.Add(this.nmrSpinInput);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.trackBar1);
@@ -327,7 +378,6 @@
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox4)).EndInit();
@@ -338,6 +388,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSpinInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,7 +401,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.PictureBox pBox1;
         private System.Windows.Forms.PictureBox pBox2;
         private System.Windows.Forms.PictureBox pBox3;
         private System.Windows.Forms.PictureBox pBox4;
@@ -369,6 +420,11 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.NumericUpDown nmrSpinInput;
+        private System.Windows.Forms.PictureBox pBox1;
+        private System.Windows.Forms.Label lblDescription2;
+        private System.Windows.Forms.Label lblDescription1;
+        private System.Windows.Forms.TextBox txtBoxBalance;
     }
 }
 
