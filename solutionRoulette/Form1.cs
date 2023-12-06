@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace solutionRoulette
 {
-    public partial class Form1 : Form
+    public partial class Roulette : Form
     {
         int currentNumber = 1;
         decimal accountBalance = 0;
         string rbtnChecked = "";
 
-        public Form1()
+        public Roulette()
         {
             InitializeComponent();
             btnStop.Enabled = false;
@@ -35,6 +35,7 @@ namespace solutionRoulette
             btnStop.Enabled = true;
             btnAbort.Enabled = true;
             btnReset.Enabled = false;
+            btnClearLog.Enabled = false;
             trackBar1.Enabled = true;
             nmrSpinInput.Enabled = false;
             comboBox1.Enabled = false;
@@ -52,6 +53,8 @@ namespace solutionRoulette
                 listBox1.Items.Add("*----------------------------------------------------------------------*");
                 listBox1.Items.Add("Free Game");
             }
+
+            listBox1.TopIndex = listBox1.Items.Count - 1;
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
@@ -66,6 +69,9 @@ namespace solutionRoulette
             setAccountBalance(nmrSpinInput.Value);
             listBox1.Items.Add("Game Aborted");
             listBox1.Items.Add("*----------------------------------------------------------------------*");
+            listBox1.Items.Add("");
+
+            listBox1.TopIndex = listBox1.Items.Count - 1;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -89,6 +95,7 @@ namespace solutionRoulette
             timer2.Enabled = false;
             btnStart.Enabled = true;
             btnReset.Enabled = false;
+            btnClearLog.Enabled = true;
             nmrSpinInput.Enabled = true;
             comboBox1.Enabled = true;
             pBox1.Image = Resources.kreis_grün;
@@ -102,6 +109,16 @@ namespace solutionRoulette
             pBox9.Image = Resources.kreis_grün;
             pBox10.Image = Resources.kreis_grün;
             rbtnState(true);
+
+            if(decimal.Parse(txtBoxBalance.Text.Split(' ')[0]) < nmrSpinInput.Value)
+            {
+                nmrSpinInput.Value = decimal.Parse(txtBoxBalance.Text.Split(' ')[0]);
+            }
+        }
+
+        private void btnClearLog_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -133,16 +150,19 @@ namespace solutionRoulette
                     if (currentNumber == Convert.ToInt32(comboBox1.SelectedItem))
                     {
                         resultMessage = "You Won";
-
                         setAccountBalance(calculateWinningValue());
+                        
+                        MessageBox.Show(resultMessage);
+
+                        listBox1.Items.Add(resultMessage);
+                        listBox1.Items.Add("Amount won: " + calculateWinningValue() + "Fr.-");
                     }
                     else
                     {
                         resultMessage = "You Lose";
+                        listBox1.Items.Add(resultMessage);
                     }
-                    MessageBox.Show(resultMessage);
-                    listBox1.Items.Add(resultMessage);
-                    listBox1.Items.Add("Amount won: " + calculateWinningValue() + "Fr.-");
+
                     listBox1.Items.Add("New Accountbalance: " + getAccountBalance().ToString() + "Fr.-");
                     listBox1.Items.Add("*----------------------------------------------------------------------*");
                     listBox1.Items.Add("");
@@ -150,9 +170,10 @@ namespace solutionRoulette
                 else
                 {
                     listBox1.Items.Add("*----------------------------------------------------------------------*");
-
+                    listBox1.Items.Add("");
                     MessageBox.Show("No Winner");
                 }
+                listBox1.TopIndex = listBox1.Items.Count - 1;
                 btnReset.Enabled = true;
             }
         }
@@ -238,7 +259,7 @@ namespace solutionRoulette
 
         private void spinCost_ValueChanged(object sender, EventArgs e)
         {
-            if(decimal.Parse(txtBoxBalance.Text.Split(' ')[0]) < nmrSpinInput.Value) 
+            if (decimal.Parse(txtBoxBalance.Text.Split(' ')[0]) < nmrSpinInput.Value)
             {
                 MessageBox.Show("Zu wenig Geld");
                 nmrSpinInput.Value = decimal.Parse(txtBoxBalance.Text.Split(' ')[0]);

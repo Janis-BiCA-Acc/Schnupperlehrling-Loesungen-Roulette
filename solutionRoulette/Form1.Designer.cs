@@ -1,6 +1,6 @@
 ﻿namespace solutionRoulette
 {
-    partial class Form1
+    partial class Roulette
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Roulette));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
@@ -58,6 +58,9 @@
             this.lblDescription2 = new System.Windows.Forms.Label();
             this.lblDescription1 = new System.Windows.Forms.Label();
             this.txtBoxBalance = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClearLog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox4)).BeginInit();
@@ -74,6 +77,8 @@
             // 
             // btnStart
             // 
+            this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStart.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(1027, 30);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(225, 105);
@@ -84,6 +89,9 @@
             // 
             // btnStop
             // 
+            this.btnStop.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnStop.FlatAppearance.BorderSize = 20;
+            this.btnStop.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.Location = new System.Drawing.Point(12, 30);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(225, 105);
@@ -94,6 +102,9 @@
             // 
             // btnAbort
             // 
+            this.btnAbort.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnAbort.FlatAppearance.BorderSize = 20;
+            this.btnAbort.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbort.Location = new System.Drawing.Point(12, 141);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(225, 105);
@@ -104,6 +115,9 @@
             // 
             // btnReset
             // 
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnReset.FlatAppearance.BorderSize = 20;
+            this.btnReset.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(12, 252);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(225, 105);
@@ -125,7 +139,7 @@
             // pBox3
             // 
             this.pBox3.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox3.Location = new System.Drawing.Point(592, 59);
+            this.pBox3.Location = new System.Drawing.Point(592, 157);
             this.pBox3.Name = "pBox3";
             this.pBox3.Size = new System.Drawing.Size(105, 105);
             this.pBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,7 +149,7 @@
             // pBox4
             // 
             this.pBox4.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox4.Location = new System.Drawing.Point(727, 59);
+            this.pBox4.Location = new System.Drawing.Point(737, 59);
             this.pBox4.Name = "pBox4";
             this.pBox4.Size = new System.Drawing.Size(105, 105);
             this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +159,7 @@
             // pBox5
             // 
             this.pBox5.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox5.Location = new System.Drawing.Point(858, 178);
+            this.pBox5.Location = new System.Drawing.Point(876, 178);
             this.pBox5.Name = "pBox5";
             this.pBox5.Size = new System.Drawing.Size(105, 105);
             this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,7 +189,7 @@
             // pBox8
             // 
             this.pBox8.Image = ((System.Drawing.Image)(resources.GetObject("pBox8.Image")));
-            this.pBox8.Location = new System.Drawing.Point(592, 442);
+            this.pBox8.Location = new System.Drawing.Point(592, 541);
             this.pBox8.Name = "pBox8";
             this.pBox8.Size = new System.Drawing.Size(105, 105);
             this.pBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +209,7 @@
             // pBox6
             // 
             this.pBox6.Image = global::solutionRoulette.Properties.Resources.kreis_grün;
-            this.pBox6.Location = new System.Drawing.Point(858, 312);
+            this.pBox6.Location = new System.Drawing.Point(876, 312);
             this.pBox6.Name = "pBox6";
             this.pBox6.Size = new System.Drawing.Size(105, 105);
             this.pBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +294,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1027, 152);
+            this.comboBox1.Location = new System.Drawing.Point(1027, 172);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(225, 21);
             this.comboBox1.TabIndex = 20;
@@ -288,9 +302,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(1027, 192);
+            this.listBox1.Location = new System.Drawing.Point(1027, 226);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(225, 355);
+            this.listBox1.Size = new System.Drawing.Size(225, 394);
             this.listBox1.TabIndex = 21;
             // 
             // nmrSpinInput
@@ -298,11 +312,6 @@
             this.nmrSpinInput.Location = new System.Drawing.Point(12, 646);
             this.nmrSpinInput.Maximum = new decimal(new int[] {
             999999999,
-            0,
-            0,
-            0});
-            this.nmrSpinInput.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -331,9 +340,9 @@
             this.lblDescription2.AutoSize = true;
             this.lblDescription2.Location = new System.Drawing.Point(9, 630);
             this.lblDescription2.Name = "lblDescription2";
-            this.lblDescription2.Size = new System.Drawing.Size(40, 13);
+            this.lblDescription2.Size = new System.Drawing.Size(26, 13);
             this.lblDescription2.TabIndex = 24;
-            this.lblDescription2.Text = "1 Spin:";
+            this.lblDescription2.Text = "Bet:";
             // 
             // lblDescription1
             // 
@@ -351,11 +360,44 @@
             this.txtBoxBalance.Size = new System.Drawing.Size(100, 20);
             this.txtBoxBalance.TabIndex = 26;
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1024, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Field-Selection:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1024, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Log:";
+            // 
+            // btnClearLog
+            // 
+            this.btnClearLog.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClearLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearLog.Location = new System.Drawing.Point(1027, 620);
+            this.btnClearLog.Name = "btnClearLog";
+            this.btnClearLog.Size = new System.Drawing.Size(225, 23);
+            this.btnClearLog.TabIndex = 29;
+            this.btnClearLog.Text = "clear";
+            this.btnClearLog.UseVisualStyleBackColor = false;
+            this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
+            // 
+            // Roulette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 690);
+            this.Controls.Add(this.btnClearLog);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxBalance);
             this.Controls.Add(this.lblDescription1);
             this.Controls.Add(this.lblDescription2);
@@ -382,8 +424,8 @@
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Roulette";
+            this.Text = "Roulette";
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox4)).EndInit();
@@ -431,6 +473,9 @@
         private System.Windows.Forms.Label lblDescription2;
         private System.Windows.Forms.Label lblDescription1;
         private System.Windows.Forms.TextBox txtBoxBalance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClearLog;
     }
 }
 
