@@ -24,21 +24,6 @@ namespace solutionRoulette
             comboBoxItems(GenerateNumberRange(1, 5));
         }
 
-        private void Start()
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                if (i == currentNumber)
-                {
-                    ((PictureBox)Controls[$"pBox{i}"]).Image = Resources.kreis_rot;
-                }
-                else
-                {
-                    ((PictureBox)Controls[$"pBox{i}"]).Image = Resources.kreis_grün;
-                }
-            }
-        }
-
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer1.Interval = 50;
@@ -53,6 +38,17 @@ namespace solutionRoulette
             rbtnState(false);
 
             setAccountBalance(0 - nmrSpinInput.Value);
+
+            if (comboBox1.SelectedItem != null)
+            {
+                listBox1.Items.Add("*----------------------------------------------------------------------*");
+                listBox1.Items.Add("New Game: -" + nmrSpinInput.Value + "Fr.-");
+            }
+            else
+            {
+                listBox1.Items.Add("*----------------------------------------------------------------------*");
+                listBox1.Items.Add("Free Game");
+            }
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
@@ -65,13 +61,14 @@ namespace solutionRoulette
             comboBox1.Enabled = false;
 
             setAccountBalance(nmrSpinInput.Value);
+            listBox1.Items.Add("Game Aborted");
+            listBox1.Items.Add("*----------------------------------------------------------------------*");
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             btnStop.Enabled = false;
             btnAbort.Enabled = false;
-            btnReset.Enabled = true;
             trackBar1.Enabled = false;
             comboBox1.Enabled = false;
 
@@ -109,7 +106,7 @@ namespace solutionRoulette
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            roulette();
+            rouletteMode();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -117,7 +114,7 @@ namespace solutionRoulette
             if (timer2.Interval <= 1000)
             {
                 timer2.Interval = timer2.Interval * 2;
-                roulette();
+                rouletteMode();
             }
             else
             {
@@ -142,12 +139,17 @@ namespace solutionRoulette
                     MessageBox.Show(resultMessage);
                     listBox1.Items.Add(resultMessage);
                     listBox1.Items.Add("New Accountbalance: " + GetAccountBalance().ToString() + "Fr.-");
-                    listBox1.Items.Add(DateTime.Now);
-                }  
+                    listBox1.Items.Add("*----------------------------------------------------------------------*");
+
+                    listBox1.Items.Add("");
+                }
                 else
                 {
+                    listBox1.Items.Add("*----------------------------------------------------------------------*");
+
                     MessageBox.Show("No Winner");
                 }
+                btnReset.Enabled = true;
             }
         }
 
@@ -184,68 +186,6 @@ namespace solutionRoulette
             rbtnEvenNumber.Enabled = state;
             rbtnUnevenNumber.Enabled = state;
             rbtnRandomNumber.Enabled = state;
-        }
-    
-        private void roulette()
-        {
-            if (rbtn1to10.Checked)
-            {
-                if (currentNumber < 10)
-                {
-                    currentNumber++;
-                    Start();
-                }
-                else if (currentNumber > 9)
-                {
-                    currentNumber = 1;
-                    Start();
-                }
-            }
-            if (rbtn1to5.Checked)
-            {
-                if (currentNumber < 5)
-                {
-                    currentNumber++;
-                    Start();
-                }
-                else if (currentNumber > 4)
-                {
-                    currentNumber = 1;
-                    Start();
-                }
-            }
-            if (rbtnEvenNumber.Checked)
-            {
-                if (currentNumber < 10)
-                {
-                    currentNumber += 2;
-                    Start();
-                }
-                else if (currentNumber > 9)
-                {
-                    currentNumber = 2;
-                    Start();
-                }
-            }
-            if (rbtnUnevenNumber.Checked)
-            {
-                if (currentNumber < 9)
-                {
-                    currentNumber += 2;
-                    Start();
-                }
-                else if (currentNumber > 8)
-                {
-                    currentNumber = 1;
-                    Start();
-                }
-            }
-            if (rbtnRandomNumber.Checked)
-            {
-                Random a = new Random();
-                currentNumber = a.Next(1, 11);
-                Start();
-            }
         }
     
         private void comboBoxItems(int[] comboboxNumbers)
@@ -296,6 +236,83 @@ namespace solutionRoulette
             {
                 MessageBox.Show("Zu wenig Geld");
                 nmrSpinInput.Value = decimal.Parse(txtBoxBalance.Text.Split(' ')[0]);
+            }
+        }
+
+        private void rouletteMode()
+        {
+            if (rbtn1to10.Checked)
+            {
+                if (currentNumber < 10)
+                {
+                    currentNumber++;
+                    rouletteSpinner();
+                }
+                else if (currentNumber > 9)
+                {
+                    currentNumber = 1;
+                    rouletteSpinner();
+                }
+            }
+            if (rbtn1to5.Checked)
+            {
+                if (currentNumber < 5)
+                {
+                    currentNumber++;
+                    rouletteSpinner();
+                }
+                else if (currentNumber > 4)
+                {
+                    currentNumber = 1;
+                    rouletteSpinner();
+                }
+            }
+            if (rbtnEvenNumber.Checked)
+            {
+                if (currentNumber < 10)
+                {
+                    currentNumber += 2;
+                    rouletteSpinner();
+                }
+                else if (currentNumber > 9)
+                {
+                    currentNumber = 2;
+                    rouletteSpinner();
+                }
+            }
+            if (rbtnUnevenNumber.Checked)
+            {
+                if (currentNumber < 9)
+                {
+                    currentNumber += 2;
+                    rouletteSpinner();
+                }
+                else if (currentNumber > 8)
+                {
+                    currentNumber = 1;
+                    rouletteSpinner();
+                }
+            }
+            if (rbtnRandomNumber.Checked)
+            {
+                Random a = new Random();
+                currentNumber = a.Next(1, 11);
+                rouletteSpinner();
+            }
+        }
+
+        private void rouletteSpinner()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i == currentNumber)
+                {
+                    ((PictureBox)Controls[$"pBox{i}"]).Image = Resources.kreis_rot;
+                }
+                else
+                {
+                    ((PictureBox)Controls[$"pBox{i}"]).Image = Resources.kreis_grün;
+                }
             }
         }
     }
